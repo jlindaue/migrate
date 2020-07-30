@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./a.out 20 0.1 2 0.3 0.5 1 1 0 0 5 5 0 0 > trajectory.txt
+
+cat trajectory.txt
+julia -i julia.jl

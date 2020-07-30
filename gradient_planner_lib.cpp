@@ -223,28 +223,3 @@ void transform_to_car_frame(Vector4d& x0, Vector4d& xf)
     //xf << Xrot(0), Xrot(1), yaw_rot, xf(3);
 //}
 
-int main (int argc, char** argv){
-	params p;
-	Vector4d start_pt;
-	Vector4d end_pt;
-
-    	p.N=stoi(argv[1]);
-	p.T=stod(argv[2]);
-	p.v=stod(argv[3]);
-    	p.WB=stod(argv[4]);
-	p.wr=stod(argv[5]);
-	start_pt(0)=stod(argv[6]);
-    	start_pt(1)=stod(argv[7]);
-	start_pt(2)=stod(argv[8]);
-	start_pt(3)=stod(argv[9]);
-    	end_pt(0)=stod(argv[10]);
-	end_pt(1)=stod(argv[11]);
-	end_pt(2)=stod(argv[12]);
-	end_pt(3)=stod(argv[13]);
-
-	MatrixXd ret=compute_trajectory(p, start_pt, end_pt);
-	cout << ret;
-	// MatrixXd ret=compute_trajectory(p, start_pt, end_pt);
-	return 0; 
-}
-
