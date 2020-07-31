@@ -17,7 +17,6 @@ typedef Eigen::Triplet<double> T;
 /**
  * @brief Structure of constants for algorithm
  * 
- * @param N number of time samples [-]
  * @param T sample time [s]
  * @param v car speed [m/s]
  * @param WB car wheelbase [m]
@@ -25,7 +24,6 @@ typedef Eigen::Triplet<double> T;
  */
 
 typedef struct params_s{
-    int N; // number of samples
     double T; // sample time [s]
     double v; // constant speed [m/s]
     double WB; // wheelbase [m]
@@ -122,8 +120,9 @@ Vector4d F(Vector4d& X, double u, params& p);
  * @param xf final state (just [y,heading,cuvature] is relevant for optimization)
  * @param p Ssructure with algorithm parameters
  * @param b output of function, vector which this function is filling
+ * @param N number of samples
  */
-void G(VectorXd& X, Vector3d& x0, Vector3d& xf, params& p, VectorXd& b);
+void G(VectorXd& X, Vector3d& x0, Vector3d& xf, params& p, VectorXd& b, int N);
 
 /**
  * @brief Compute gradient of constraints
@@ -138,10 +137,11 @@ void G(VectorXd& X, Vector3d& x0, Vector3d& xf, params& p, VectorXd& b);
  * @param X vector of all states, inputs and costates
  * @param p Ssructure with algorithm parameters
  * @param gg output of function, part of matrix A which is filled in
+ * @param N number of samples
  */
 // gradient of constraints grad(g(x))
 //MatrixXd grad_G(VectorXd& X, params& p);
-void grad_G(VectorXd& X, params& p, std::vector<T>& gg);
+void grad_G(VectorXd& X, params& p, std::vector<T>& gg, int N);
 
 // gradient of cost function
 //VectorXd grad_f(VectorXd& X, VectorXd& W, params& p);
