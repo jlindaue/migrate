@@ -28,6 +28,14 @@ MatrixXd compute_trajectory(params& p, std::vector<Vector4d>& wpts)
         Ns_init.push_back(n);
         Ns.push_back(N);
     }
+    std::cout << "N initial: " << N << "\n";
+    
+    std::cout << "PARAMS: v=" << p.v << ", T=" << p.T << ", WB=" << p.WB << ", wr=" << p.wr << ", Wye=" << p.Wye << ", Wyaw=" << p.Wyaw << ", Wc=" << p.Wc << ", Wdc=" << p.Wdc << "\n";
+    std::cout << "VECTOR:\n";
+    for (Vector4d& v : wpts) std::cout << v << "\n";
+    std::cout << "3D:\n" << x0 << "\nSec\n" << xf << "\n";
+    std::cout << "ALL\n";
+
     
     
     // 3*N states + 1*N inputs + 3*(N+1) constraints
@@ -53,6 +61,7 @@ MatrixXd compute_trajectory(params& p, std::vector<Vector4d>& wpts)
             X = VectorXd::Zero(4*N + 3*(N+1) + Yoff_cnt);
             Xx.resize(4,N+1);
         }
+    	std::cout << "Step: " << j << " N: " << N << "\n";
         
         SparseMatrix<double> A( 4*N + 3*(N+1) + Yoff_cnt, 4*N + 3*(N+1) + Yoff_cnt);
         std::vector<T> A_t;
