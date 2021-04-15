@@ -22,13 +22,13 @@ int main(int argc, char **argv) {
     float dist;
     while (infile >> N >> dist >> t){
 	Ns.push_back(N);
-	ts.push_back(t);
+	ts.push_back(float(t)/1000);
     }
     plt::plot(Ns, ts, "rx");
-    plt::ylabel("Time[s]");
+    plt::ylabel("Time[ms]");
     plt::xlabel("N");
-    plt::xlim(0,200);
-    plt::ylim(0,200000);
+    //plt::xlim(0,300);
+    //plt::ylim(0,500);
     //plt::axis("equal");
     plt::legend();
     plt::show();
