@@ -1,0 +1,150 @@
+
+
+Nodes:
+  /robot_state_publisher :
+    Inbound:
+    Outbound:
+      /cartographer_node
+      /cartographer_node
+  /lidar_ust10lx :
+    Inbound:
+    Outbound:
+      /cartographer_node
+  /static_transform_publisher_laser :
+    Inbound:
+    Outbound:
+      /cartographer_node
+  /launch_sensors_tx2_auto_3_7052_8892419103164458558 :
+    Inbound:
+    Outbound:
+  /rosout :
+    Inbound:
+    Outbound:
+  /static_transform_publisher_imu :
+    Inbound:
+    Outbound:
+      /cartographer_node
+  /imu_node :
+    Inbound:
+    Outbound:
+      /cartographer_node
+  /cartographer_node :
+    Inbound:
+      /robot_state_publisher
+      /cartographer_node
+      /static_transform_publisher_laser
+      /robot_state_publisher
+      /static_transform_publisher_imu
+      /lidar_ust10lx
+      /imu_node
+    Outbound:
+      /cartographer_occupancy_grid_node
+      /cartographer_node
+  /cartographer_occupancy_grid_node :
+    Inbound:
+      /cartographer_node
+    Outbound:
+Services:
+  /robot_state_publisher/get_loggers
+  /launch_sensors_tx2_auto_3_7052_8892419103164458558/get_loggers
+  /finish_trajectory
+  /imu_node/get_loggers
+  /update_laser_status
+  /get_trajectory_states
+  /launch_sensors_tx2_auto_3_7052_8892419103164458558/set_logger_level
+  /robot_state_publisher/set_logger_level
+  /lidar_ust10lx/get_loggers
+  /static_transform_publisher_imu/get_loggers
+  /cartographer_occupancy_grid_node/set_logger_level
+  /submap_query
+  /rosout/set_logger_level
+  /cartographer_node/get_loggers
+  /cartographer_occupancy_grid_node/get_loggers
+  /trajectory_query
+  /start_trajectory
+  /read_metrics
+  /lidar_ust10lx/set_parameters
+  /imu_node/set_logger_level
+  /static_transform_publisher_laser/set_logger_level
+  /static_transform_publisher_imu/set_logger_level
+  /imu_node/set_parameters
+  /lidar_ust10lx/set_logger_level
+  /rosout/get_loggers
+  /cartographer_node/set_logger_level
+  /write_state
+  /static_transform_publisher_laser/get_loggers
+
+
+Nodes:
+  /robot_state_publisher :
+    Inbound:
+    Outbound:
+      /cartographer_node
+      /cartographer_node
+  /lidar_ust10lx :
+    Inbound:
+    Outbound:
+      /cartographer_node
+  /static_transform_publisher_laser :
+    Inbound:
+    Outbound:
+      /cartographer_node
+  /launch_sensors_tx2_auto_3_7052_8892419103164458558 :
+    Inbound:
+    Outbound:
+  /rosout :
+    Inbound:
+    Outbound:
+  /static_transform_publisher_imu :
+    Inbound:
+    Outbound:
+      /cartographer_node
+  /imu_node :
+    Inbound:
+    Outbound:
+      /cartographer_node
+  /cartographer_node :
+    Inbound:
+      /robot_state_publisher
+      /cartographer_node
+      /static_transform_publisher_laser
+      /robot_state_publisher
+      /static_transform_publisher_imu
+      /lidar_ust10lx
+      /imu_node
+    Outbound:
+      /cartographer_occupancy_grid_node
+      /cartographer_node
+  /cartographer_occupancy_grid_node :
+    Inbound:
+      /cartographer_node
+    Outbound:
+Services:
+  /robot_state_publisher/get_loggers
+  /launch_sensors_tx2_auto_3_7052_8892419103164458558/get_loggers
+  /finish_trajectory
+  /imu_node/get_loggers
+  /update_laser_status
+  /get_trajectory_states
+  /launch_sensors_tx2_auto_3_7052_8892419103164458558/set_logger_level
+  /robot_state_publisher/set_logger_level
+  /lidar_ust10lx/get_loggers
+  /static_transform_publisher_imu/get_loggers
+  /cartographer_occupancy_grid_node/set_logger_level
+  /submap_query
+  /rosout/set_logger_level
+  /cartographer_node/get_loggers
+  /cartographer_occupancy_grid_node/get_loggers
+  /trajectory_query
+  /start_trajectory
+  /read_metrics
+  /lidar_ust10lx/set_parameters
+  /imu_node/set_logger_level
+  /static_transform_publisher_laser/set_logger_level
+  /static_transform_publisher_imu/set_logger_level
+  /imu_node/set_parameters
+  /lidar_ust10lx/set_logger_level
+  /rosout/get_loggers
+  /cartographer_node/set_logger_level
+  /write_state
+  /static_transform_publisher_laser/get_loggers

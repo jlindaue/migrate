@@ -1,0 +1,107 @@
+--------------------------------------------------------------------------------
+Node [/cartographer_node]
+Publications: 
+ * /constraint_list [visualization_msgs/MarkerArray]
+ * /landmark_poses_list [visualization_msgs/MarkerArray]
+ * /rosout [rosgraph_msgs/Log]
+ * /scan_matched_points2 [sensor_msgs/PointCloud2]
+ * /submap_list [cartographer_ros_msgs/SubmapList]
+ * /tf [tf2_msgs/TFMessage]
+ * /trajectory_node_list [visualization_msgs/MarkerArray]
+
+Subscriptions: 
+ * /imu [sensor_msgs/Imu]
+ * /scan [sensor_msgs/LaserScan]
+ * /tf [tf2_msgs/TFMessage]
+ * /tf_static [tf2_msgs/TFMessage]
+
+Services: 
+ * /cartographer_node/get_loggers
+ * /cartographer_node/set_logger_level
+ * /finish_trajectory
+ * /get_trajectory_states
+ * /read_metrics
+ * /start_trajectory
+ * /submap_query
+ * /trajectory_query
+ * /write_state
+
+
+contacting node http://192.168.222.1:33227/ ...
+Pid: 7707
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound
+    * transport: TCPROS
+ * topic: /tf
+    * to: /cartographer_node
+    * direction: outbound
+    * transport: INTRAPROCESS
+ * topic: /tf
+    * to: /rviz_1618396993927583441
+    * direction: outbound
+    * transport: TCPROS
+ * topic: /submap_list
+    * to: /cartographer_occupancy_grid_node
+    * direction: outbound
+    * transport: TCPROS
+ * topic: /tf
+    * to: /cartographer_node (http://192.168.222.1:33227/)
+    * direction: inbound
+    * transport: INTRAPROCESS
+ * topic: /tf
+    * to: /static_transform_publisher_laser (http://192.168.222.1:38988/)
+    * direction: inbound
+    * transport: TCPROS
+ * topic: /tf
+    * to: /robot_state_publisher (http://192.168.222.1:45150/)
+    * direction: inbound
+    * transport: TCPROS
+ * topic: /tf
+    * to: /static_transform_publisher_imu (http://192.168.222.1:33253/)
+    * direction: inbound
+    * transport: TCPROS
+ * topic: /tf_static
+    * to: /robot_state_publisher (http://192.168.222.1:45150/)
+    * direction: inbound
+    * transport: TCPROS
+ * topic: /scan
+    * to: /lidar_ust10lx (http://192.168.222.1:43724/)
+    * direction: inbound
+    * transport: TCPROS
+ * topic: /imu
+    * to: /imu_node (http://192.168.222.1:39048/)
+    * direction: inbound
+    * transport: TCPROS
+
+nvidia@tx2-auto-3:~$ rosnode info /cartographer_occupancy_grid_node 
+--------------------------------------------------------------------------------
+Node [/cartographer_occupancy_grid_node]
+Publications: 
+ * /map [nav_msgs/OccupancyGrid]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /submap_list [cartographer_ros_msgs/SubmapList]
+
+Services: 
+ * /cartographer_occupancy_grid_node/get_loggers
+ * /cartographer_occupancy_grid_node/set_logger_level
+
+
+contacting node http://192.168.222.1:36528/ ...
+Pid: 7724
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound
+    * transport: TCPROS
+ * topic: /map
+    * to: /rviz_1618396993927583441
+    * direction: outbound
+    * transport: TCPROS
+ * topic: /submap_list
+    * to: /cartographer_node (http://192.168.222.1:33227/)
+    * direction: inbound
+    * transport: TCPROS
