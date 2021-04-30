@@ -42,7 +42,7 @@ class Bezier {
 
     void comp_curve(Vector4d &start_point, Vector4d &end_point) {
         float d = sqrt(pow(start_point(0) - end_point(0), 2) + pow(start_point(1) - end_point(1), 2));
-        int steps = d / 0.15;
+        int steps = d / 0.05;
 
         for (int i = 0; i <= steps; i++) {
             float t = float(i) / float(steps);
@@ -74,7 +74,7 @@ class Bezier {
 
 public:
     void bezier(Vector4d &start_point, Vector4d &end_point) {
-        w = {0.5, 0.4, 0., 0, 0.0, 0.0, 0, -0};
+        w = {0.4, 0.5, 0., 0, 0.0, 0.0, 0, -0};
         alpha = start_point(2) + start_point(3) * w.t1;
         beta = end_point(2) - end_point(3) * w.t4;
         comp_ctrl_pts(start_point, end_point);
@@ -187,28 +187,33 @@ int main(int argc, char **argv) {
     end_pt(1) = stod(argv[6]);
     end_pt(2) = stod(argv[7]);
     end_pt(3) = stod(argv[8]);
-    flex(0) = stod(argv[9]);
-    flex(1) = stod(argv[10]);
-    flex(2) = stod(argv[11]);
-    flex(3) = stod(argv[12]);
+    //flex(0) = stod(argv[9]);
+    //flex(1) = stod(argv[10]);
+    //flex(2) = stod(argv[11]);
+    //flex(3) = stod(argv[12]);
     //p.v = stod(argv[13])/p.T;
     std::cout << "Set to: " << p.v*p.T << "\n";
 
-    flex(2)=in_pi_range((start_pt(2)+end_pt(2))/2);
+    //flex(2)=in_pi_range((start_pt(2)+end_pt(2))/2);
 
     Bezier b;
-    b.bezier(start_pt,flex);
+    b.bezier(start_pt,end_pt);
+    //b.bezier(start_pt,flex);
 
-    Bezier b2;
-    b2.bezier(flex, end_pt);
+    //Bezier b2;
+    //b2.bezier(flex, end_pt);
 
 
-    compute_trajectory_caller(p, start_pt, flex);
-    compute_trajectory_caller(p, flex, end_pt);
+    compute_trajectory_caller(p, start_pt, end_pt);
+    //compute_trajectory_caller(p, start_pt, flex);
+    //compute_trajectory_caller(p, flex, end_pt);
     plt::axis("equal");
     plt::legend();
-    plt::show();
-    //plt::save("bezier.pdf");
+    plt::grid(true);
+    plt::xlabel("x coordinate [m]");
+    plt::ylabel("y coordinate [m]");
+    //plt::show();
+    plt::save("bezier.pdf");
     return 0;
 }
 

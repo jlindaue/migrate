@@ -13,7 +13,7 @@ namespace plt = matplotlibcpp;
 int main(int argc, char **argv) {
 
     std::string homepath = std::getenv("HOME");
-    std::ifstream infile(homepath + "/jlindaue/gradient_timer.txt");
+    std::ifstream infile(homepath + "/jlindaue/migrate/data/gradient_timer.txt");
 
     std::vector<int> Ns;
     std::vector<long> ts;
