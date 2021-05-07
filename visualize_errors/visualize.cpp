@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
     std::string homepath = std::getenv("HOME");
     std::string filename = argv[1];
     int plot_col = std::stod(argv[2]);;
-    std::ifstream infile(homepath + "/jlindaue/plot_data/" + filename);
+    std::ifstream infile(homepath + "/jlindaue/organizovana_data/" + filename);
 
     std::vector<float> d_es;
     std::vector<float> yaw_es;
